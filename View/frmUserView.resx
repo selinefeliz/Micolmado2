@@ -117,4 +117,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="dgvSr.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dgvid.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dgvname.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dgvuserName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dgvpass.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dgvphone.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dgvEdit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="dgvEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAABZUlEQVQ4T2MgFbA55ldxuBS+YHcpOM9pGSfNwBAaysxpkRLEYZ6SBsOcFklhUPUogMMjr53dvfAr
+        w6oX/5kmnfnH7lx4gQGoYSG7RXInsgFs5in+UD1wwOGR08Za3PaepXXSZ9asaZ8ZVr/4z+Fa9JKBwzL5
+        NFQNTgDTzPD2wn+G9xf/s7RN+szuVfqVw7mgjaABHJ65jawFrR8Y3kA0M7y78J+1tucDu3vOdIgCPAYQ
+        1AwCuAwgSjMIYDOAyy2nHtnPYM3V3SDNk6FKEADTgAYmKcuEd1IB+R8Znp3GrxkE0A3gMksyibCOeL3G
+        1uc30JBPrBVdH3FqBgF0A6StEltSrcP+xVuHvZGwTPrA6ZHfBZVCAcDENpHDIkEBwwBZi7giWYuEXk7L
+        VCsGhwYWqDAGACVANvNELayBSAygogEWyWd4jdNEoOLEAYcEDrDF5tF8QBck2gMNOQ4yiDScFM3AwMAA
+        AN7DwmMxbQqVAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="dgvDel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dgvDel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAABE0lEQVQ4T41SMU7DQBAchG0oCF0eQEVoQgEo/ACJJ6QKH0GiS5Ue5RV5AB09HTUtFSIJRXJOLnMw
+        xzk+28lIo9u9mVmvbKMKOdIxaUscS96NHFnfIBsW6e4kx7BAa4XksRyqo/Myc6L478oPpXX34UBxYIm0
+        V/WkJrqM4n/gxQ2nPu9Deq8VC8hxeE+xuOJ3TW0NkjvFAjj1tmCasb/0/QJZl+fc925bxQIsjs69gfyy
+        yC58z7rD838Li+MzxQL4WdreQO4YgFPFAniZUFzL1DTA0Hug2DYoTmVqGvApewyKHzLVDjBI32WPsUL6
+        ptDcfWvV7q1f8fxR/yp7DIovMjma6jqZyB6D640KoUryN36SnQA2yjUvUXXbgu0AAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

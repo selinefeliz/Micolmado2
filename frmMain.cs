@@ -9,43 +9,46 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace MiColmado
 {
     public partial class frmMain : Sample
     {
-        //static frmMain _obj;
-        //public static frmMain instancia
-        //{
-        //    //get
-        //    //{
-        //    //    if (_obj == null)
-        //    //    {
-        //    //        _obj = new frmMain();
-        //    //    }
-        //    //    //return _obj;
-        //    //}
-        //}
+        static frmMain _obj;
+        public static frmMain Instance
+        {
+            get
+            {
+                if (_obj == null)
+                {
+                    _obj = new frmMain();
+                }
+                return _obj;
+            }
+        }
         public frmMain()
         {
             InitializeComponent();
         }
 
         //metodo para añadir las pestañas cuando selecciones home,categoria etc
-        public void AddControls(Form f) //es static
+        public void AddControls(Form F)
         {
-            centerPanel.Controls.Clear();
-            f.Dock = DockStyle.Fill;
-            f.TopLevel = false;
-            centerPanel.Controls.Add(f);
-            f.Show();
+            this.centerPanel.Controls.Clear();
+            F.Dock = DockStyle.Fill;
+            F.TopLevel = false;
+            centerPanel.Controls.Add(F);
+            F.Show();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            //_obj = this;
+            _obj = this;
             //para que aparezca el nombre de usuario en la barra lateral
             lbusuario.Text = MainClass.USER;
+
         }
+        
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
@@ -68,9 +71,10 @@ namespace MiColmado
 
         }
 
+        //btnEmpleados
         private void button6_Click(object sender, EventArgs e)
         {
-
+            AddControls(new View.frmUserView()); 
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

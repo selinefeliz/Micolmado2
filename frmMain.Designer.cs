@@ -75,7 +75,7 @@
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(197, 42);
             this.btnEmpleados.TabIndex = 7;
-            this.btnEmpleados.Text = "Empleados";
+            this.btnEmpleados.Text = "Empleados/Usuarios";
             this.btnEmpleados.UseVisualStyleBackColor = true;
             this.btnEmpleados.Click += new System.EventHandler(this.button6_Click);
             // 
