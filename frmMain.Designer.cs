@@ -47,8 +47,7 @@
             // 
             // Panel
             // 
-            this.Panel.BackColor = System.Drawing.Color.DarkCyan;
-            this.Panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Panel.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.Panel.Controls.Add(this.btnEmpleados);
             this.Panel.Controls.Add(this.btnProveedores);
             this.Panel.Controls.Add(this.btnCompras);
@@ -60,49 +59,58 @@
             this.Panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.Panel.Location = new System.Drawing.Point(0, 0);
             this.Panel.Name = "Panel";
-            this.Panel.Size = new System.Drawing.Size(232, 571);
+            this.Panel.Size = new System.Drawing.Size(232, 584);
             this.Panel.TabIndex = 0;
             this.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnEmpleados
             // 
-            this.btnEmpleados.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.BackgroundImage")));
             this.btnEmpleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnEmpleados.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnEmpleados.FlatAppearance.BorderSize = 0;
             this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpleados.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpleados.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEmpleados.Location = new System.Drawing.Point(10, 424);
+            this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
+            this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpleados.Location = new System.Drawing.Point(10, 477);
             this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(197, 42);
+            this.btnEmpleados.Size = new System.Drawing.Size(197, 40);
             this.btnEmpleados.TabIndex = 7;
-            this.btnEmpleados.Text = "Empleados/Usuarios";
+            this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.UseVisualStyleBackColor = true;
             this.btnEmpleados.Click += new System.EventHandler(this.button6_Click);
             // 
             // btnProveedores
             // 
-            this.btnProveedores.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProveedores.BackgroundImage")));
             this.btnProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnProveedores.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnProveedores.FlatAppearance.BorderSize = 0;
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProveedores.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnProveedores.Location = new System.Drawing.Point(10, 376);
+            this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
+            this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProveedores.Location = new System.Drawing.Point(10, 420);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(197, 42);
+            this.btnProveedores.Size = new System.Drawing.Size(197, 40);
             this.btnProveedores.TabIndex = 6;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = true;
             // 
             // btnCompras
             // 
-            this.btnCompras.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCompras.BackgroundImage")));
             this.btnCompras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCompras.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnCompras.FlatAppearance.BorderSize = 0;
             this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompras.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCompras.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCompras.Location = new System.Drawing.Point(10, 328);
+            this.btnCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnCompras.Image")));
+            this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCompras.Location = new System.Drawing.Point(10, 374);
             this.btnCompras.Name = "btnCompras";
-            this.btnCompras.Size = new System.Drawing.Size(197, 42);
+            this.btnCompras.Size = new System.Drawing.Size(197, 40);
             this.btnCompras.TabIndex = 5;
             this.btnCompras.Text = "Compras";
             this.btnCompras.UseVisualStyleBackColor = true;
@@ -110,31 +118,39 @@
             // 
             // btnProductos
             // 
-            this.btnProductos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProductos.BackgroundImage")));
             this.btnProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnProductos.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnProductos.FlatAppearance.BorderSize = 0;
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductos.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductos.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnProductos.Location = new System.Drawing.Point(10, 280);
+            this.btnProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductos.Image")));
+            this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductos.Location = new System.Drawing.Point(10, 319);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(197, 42);
+            this.btnProductos.Size = new System.Drawing.Size(197, 40);
             this.btnProductos.TabIndex = 4;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // btnCategoria
             // 
-            this.btnCategoria.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCategoria.BackgroundImage")));
             this.btnCategoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCategoria.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnCategoria.FlatAppearance.BorderSize = 0;
             this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategoria.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategoria.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCategoria.Location = new System.Drawing.Point(10, 232);
+            this.btnCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoria.Image")));
+            this.btnCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategoria.Location = new System.Drawing.Point(10, 253);
             this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(197, 42);
+            this.btnCategoria.Size = new System.Drawing.Size(197, 40);
             this.btnCategoria.TabIndex = 3;
             this.btnCategoria.Text = "Categoria";
             this.btnCategoria.UseVisualStyleBackColor = true;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // lbusuario
             // 
@@ -150,11 +166,14 @@
             // 
             // btnHome
             // 
-            this.btnHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHome.BackgroundImage")));
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(10, 186);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(197, 40);
@@ -177,7 +196,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(232, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(749, 571);
+            this.panel2.Size = new System.Drawing.Size(749, 584);
             this.panel2.TabIndex = 1;
             // 
             // centerPanel
@@ -187,7 +206,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.centerPanel.Location = new System.Drawing.Point(7, 12);
             this.centerPanel.Name = "centerPanel";
-            this.centerPanel.Size = new System.Drawing.Size(730, 547);
+            this.centerPanel.Size = new System.Drawing.Size(730, 560);
             this.centerPanel.TabIndex = 0;
             this.centerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -195,11 +214,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 571);
+            this.ClientSize = new System.Drawing.Size(981, 584);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.Panel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.Panel.ResumeLayout(false);

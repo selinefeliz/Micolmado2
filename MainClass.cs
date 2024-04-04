@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.IO;
+using ComboBox = System.Windows.Forms.ComboBox;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace MiColmado
 {
@@ -146,7 +148,8 @@ namespace MiColmado
         ////prendiente
         private static void gv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            Guna.UI2.WinForms.Guna2datagridView gv = (Guna.UI2.WindForms.Guna2DataGridView)sender;
+            //Guna.UI2.WinForms.Guna2datagridView gv = (Guna.UI2.WindForms.Guna2DataGridView)sender;
+            DataGridView gv = (DataGridView)sender;
             int count = 0;
             foreach (DataGridViewRow row in gv.Rows)
             {
@@ -187,6 +190,49 @@ namespace MiColmado
             cb.ValueMember = "id";
             cb.DataSource = dt;
             cb.SelectedIndex = -1;
+        }
+
+        public static bool Validation(Form F)
+        {
+            bool isValid = false;
+
+            int count = 0;
+            
+            foreach (Control c in F.Controls)
+            {
+                //usando Tag del control para comprobar si queremos validar o no 
+                if (Convert.ToString(c.Tag)!="" && Convert.ToString(c.Tag) !=null)
+                {
+                    if (c is TextBox)
+                    {
+                        TextBox t = (TextBox)c;
+                        if (t.Text.Trim() == "")
+                        {
+                            t.ForeColor = Color.White; //aqui es BorderColor
+                            t.BackColor = Color.Red; //modificar
+                            count++;
+                        }
+                        else
+                        {
+                            t.ForeColor = Color.DarkCyan; //aqui es BorderColor
+                            t.BackColor = Color.White; //modificar
+                        }
+
+                    }
+                }
+
+                if (count == 0)
+                {
+                    isValid = true;
+                }
+                else
+                {
+                    isValid = false;
+                }
+
+            }
+
+            return isValid;
         }
     }
 }

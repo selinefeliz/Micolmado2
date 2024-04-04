@@ -81,5 +81,15 @@ namespace MiColmado
         {
 
         }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace MiColmado
 
         }
 
-        private void textBox1_Enter(object sender, EventArgs e)
+        public void textBox1_Enter(object sender, EventArgs e)
         {
             //para poner un marca de agua
             if (txtSearch.Text == "")
@@ -33,12 +33,12 @@ namespace MiColmado
             
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public virtual void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public void label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -49,6 +49,16 @@ namespace MiColmado
         }
 
         public virtual void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
