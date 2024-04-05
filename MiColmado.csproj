@@ -48,7 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
@@ -73,6 +75,17 @@
     </Compile>
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserView.Designer.cs">
+      <DependentUpon>frmUserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MiColmadoSQLDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiColmadoSQLDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Model\frmUserAdd.cs">
       <SubType>Form</SubType>
@@ -113,17 +126,14 @@
     <Compile Include="SampleView.Designer.cs">
       <DependentUpon>SampleView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmUserView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmUserView.Designer.cs">
-      <DependentUpon>frmUserView.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmCategoria.resx">
       <DependentUpon>frmCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserView.resx">
+      <DependentUpon>frmUserView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\frmUserAdd.resx">
       <DependentUpon>frmUserAdd.cs</DependentUpon>
@@ -142,6 +152,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -152,9 +163,17 @@
     <EmbeddedResource Include="SampleView.resx">
       <DependentUpon>SampleView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmUserView.resx">
-      <DependentUpon>frmUserView.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="MiColmadoSQLDataSet.xsc">
+      <DependentUpon>MiColmadoSQLDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MiColmadoSQLDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MiColmadoSQLDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MiColmadoSQLDataSet.xss">
+      <DependentUpon>MiColmadoSQLDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -177,6 +196,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>MiColmadoSQL.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\userPic.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -189,6 +209,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

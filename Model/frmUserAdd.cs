@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace MiColmado
 {
@@ -28,16 +30,48 @@ namespace MiColmado
             }
             else
             {
-                //39:29
+                string qry = "";
                 if (id == 0)//para insertar datos
                 {
+                    qry = @"Insert into users values(@userName,@pass,@name,@phone,@image)";
 
                 }
                 else //actualizar
                 {
+                    qry = @"UPDATE users set userName = @userName
+                                upass = @pass,
+                                uName =@name,
+                                uPhone = @phone,
+                                uImage = @image
+                                where userID = @id";
 
                 }
-              
+                
+                Image temp = new Bitmap(txtPic.Image);
+                MemoryStream ms = new MemoryStream();
+                temp.Save(ms,System.Drawing.Imaging.ImageFormat.Png);
+                imageByteArray = ms.ToArray();
+
+                Hashtable ht = new Hashtable();
+                ht.Add("@id", id);
+                ht.Add("@userName", txtUserName.Text);
+                ht.Add("@pass", txtPass.Text);
+                ht.Add("@name", txtName.Text);
+                ht.Add("@phone", txtPhone.Text);
+                ht.Add("@image", imageByteArray);
+
+                if (MainClass.SQL(qry,ht)>0)
+                {
+                    MessageBox.Show("Datos Guardados correctamente", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    id = 0;
+                    txtName.Text = "";
+                    txtUserName.Text = "";
+                    txtPass.Text = "";
+                    txtPhone.Text = "";
+                    txtPic.Image = MiColmado.Properties.Resources.userPic;
+                    txtName.Focus();
+                }
+
             }
         }
         private void frmUserAdd_Load(object sender, EventArgs e)
@@ -70,7 +104,7 @@ namespace MiColmado
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Images(.jpg, .png) | *.png, *jpg";
+            ofd.Filter = "Images(.jpg, .png) | *.png; *jpg";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 filePath = ofd.FileName;

@@ -22,15 +22,15 @@ namespace MiColmado
 
         }
 
-        public void textBox1_Enter(object sender, EventArgs e)
+        public virtual void textBox1_Enter(object sender, EventArgs e)
         {
-            //para poner un marca de agua
-            if (txtSearch.Text == "")
-            {
-                txtSearch.Text = "Buscar";
-                txtSearch.ForeColor = Color.Silver;
-            }
-            
+            ////para poner un marca de agua
+            //if (txtSearch.Text == "")
+            //{
+            //    txtSearch.Text = "Buscar";
+            //    txtSearch.ForeColor = Color.Silver;
+            //}
+
         }
 
         public virtual void pictureBox1_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace MiColmado
 
         public virtual void txtSearch_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label2_Click(object sender, EventArgs e)

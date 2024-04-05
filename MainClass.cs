@@ -21,7 +21,7 @@ namespace MiColmado
     {
         //conexion con la base de datos
 
-        public static readonly string con_string = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\selin\\OneDrive\\Documentos\\MiColmadoSQL.mdf;Integrated Security=True;Connect Timeout=30";
+        public static readonly string con_string = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\selin\\source\\repos\\MiColmado4\\MiColmadoSQL.mdf;Integrated Security=True;Connect Timeout=30";
         public static SqlConnection con = new SqlConnection(con_string);
 
         //metodo para comprobar la validacion de usuario
@@ -145,17 +145,18 @@ namespace MiColmado
             }
         }
 
-        ////prendiente
+        ////para Mostrar el contenido del DataGridView
         private static void gv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            //Guna.UI2.WinForms.Guna2datagridView gv = (Guna.UI2.WindForms.Guna2DataGridView)sender;
             DataGridView gv = (DataGridView)sender;
             int count = 0;
+
             foreach (DataGridViewRow row in gv.Rows)
             {
                 count++;
                 row.Cells[0].Value = count;
             }
+            
         }
         //para que se ponga borrrosa la pantalla 
         public static void BlurBackground(Form Model)
@@ -192,6 +193,7 @@ namespace MiColmado
             cb.SelectedIndex = -1;
         }
 
+        //para validar que el usuario ingrese los datos para agregar un empleado o usuario
         public static bool Validation(Form F)
         {
             bool isValid = false;
