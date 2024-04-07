@@ -12,14 +12,17 @@ namespace MiColmado
 {
     public partial class frmLogin : Form
     {
+        //esto es para que el programa se cierre por completo
+        private bool closeApplicationAfterClose = false;
         public frmLogin()
         {
             InitializeComponent();
         }
 
+        //descomentar si quieres logearte con un usuario
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //validando las credenciales del usuario
+            ////validando las credenciales del usuario
             //if ((MainClass.IsValidUser(txtUsuario.Text, txtContrasena.Text)) == false)
             //{
             //    MessageBox.Show("Contraseña o usuario incorrectas");
@@ -35,10 +38,11 @@ namespace MiColmado
             //    frm.Show();
 
             //}
+
+            //eliminar esta parte cuando descomentes el codigo que esta arriba
             this.Hide();
             frmMain frm = new frmMain();
             frm.Show();
-
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -111,9 +115,23 @@ namespace MiColmado
 
         }
 
+        //este es el boton que cierra el frmLogin
         private void pictureBox3_Click_1(object sender, EventArgs e)
         {
+            //esto hace que se cierre el programa por completo
+            closeApplicationAfterClose = true;
             this.Close();
+
+        }
+
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Verificar si se debe cerrar la aplicación después de que el formulario se cierre
+            if (closeApplicationAfterClose)
+            {
+                Application.Exit(); // Cerrar la aplicación
+            }
+
         }
     }
 }

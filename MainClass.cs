@@ -19,9 +19,9 @@ namespace MiColmado
 {
     internal class MainClass
     {
-        //conexion con la base de datos
+        //conexion con la base de datos (MODIFICAR PARA QUE USE LA BD DE TU MAQUINA) *Solo el string*
 
-        public static readonly string con_string = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\selin\\source\\repos\\MiColmado4\\MiColmadoSQL.mdf;Integrated Security=True;Connect Timeout=30";
+        public static readonly string con_string = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\selin\\OneDrive\\Documentos\\MiColmado.mdf;Integrated Security=True;Connect Timeout=30";
         public static SqlConnection con = new SqlConnection(con_string);
 
         //metodo para comprobar la validacion de usuario
@@ -46,7 +46,7 @@ namespace MiColmado
             }
             return isValid;
         }
-        //pendiente
+        //para que pare de ponerse borroso
         public static void StopBuffering(Panel ctr, bool doubleBuffer)
         {
             try
@@ -78,7 +78,7 @@ namespace MiColmado
             get { return img; }
             private set { img = value; }
         }
-        //Para la imagen del usuario 
+        //Para la imagen del usuario (falta por continuar)
 
 
         ///Metodo para crear las funciones de Create, Update, Read,Delete CURF operations
@@ -117,9 +117,10 @@ namespace MiColmado
         }
 
         ////para cargar la data desde la base de datos
-        public static void LoadData(string qry, DataGridView gv, ListBox lb)
+        public static void LoadData(string qry, DataGridView gv) //, ListBox lb)
         {
-            gv.CellFormatting += new DataGridViewCellFormattingEventHandler(gv_CellFormatting);
+
+           // gv.CellFormatting += new DataGridViewCellFormattingEventHandler(gv_CellFormatting);
             try
             {
                 SqlCommand cmd = new SqlCommand(qry, con);
@@ -127,14 +128,17 @@ namespace MiColmado
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-
+                /*
                 for (int i = 0; i < lb.Items.Count; i++)
                 {
                     string colNam1 = ((DataGridViewColumn)lb.Items[i]).Name;
                     gv.Columns[colNam1].DataPropertyName = dt.Columns[i].ToString();
 
                 }
+                */
                 gv.DataSource = dt;
+
+                
 
             }
             catch (Exception ex)
@@ -145,8 +149,8 @@ namespace MiColmado
             }
         }
 
-        ////para Mostrar el contenido del DataGridView
-        private static void gv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        ////para Darle formato a las filas del dataGridView
+        /**private static void gv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             DataGridView gv = (DataGridView)sender;
             int count = 0;
@@ -154,10 +158,12 @@ namespace MiColmado
             foreach (DataGridViewRow row in gv.Rows)
             {
                 count++;
-                row.Cells[0].Value = count;
+               // row.Cells[0].Value = count;
             }
             
         }
+        */
+
         //para que se ponga borrrosa la pantalla 
         public static void BlurBackground(Form Model)
         {

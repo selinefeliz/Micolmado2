@@ -74,6 +74,7 @@ namespace MiColmado
         //btnEmpleados
         private void button6_Click(object sender, EventArgs e)
         {
+            //aqui se abre el formulario user View(el que tiene el datagridview)
             AddControls(new View.frmUserView()); 
         }
 
@@ -90,6 +91,13 @@ namespace MiColmado
         private void btnProductos_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //para que cuando se cierre el formulario Main aparezca el frmLogin
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmLogin frml = new frmLogin();
+            frml.Show();
         }
     }
 }
