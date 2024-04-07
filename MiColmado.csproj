@@ -212,5 +212,35 @@
   <ItemGroup>
     <None Include="Resources\cerrar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mi Colmado %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comida-y-bebida %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homa %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoriaIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productosIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comprasIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proveedoresIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empleadosIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrarIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscarIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
