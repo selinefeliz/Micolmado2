@@ -24,7 +24,7 @@ namespace MiColmado
 
         public virtual void textBox1_Enter(object sender, EventArgs e)
         {
-            //BORRAR ESTA PARTE
+            //BORRAR ESTA PARTE ya que no se utiliza
             ////para poner un marca de agua
             //if (txtSearch.Text == "")
             //{
