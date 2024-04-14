@@ -46,6 +46,7 @@ namespace MiColmado
             _obj = this;
             //para que aparezca el nombre de usuario en la barra lateral
             lbusuario.Text = MainClass.USER;
+            lblUser
 
         }
         
