@@ -39,27 +39,15 @@ namespace MiColmado.View
         //para que carge los datos del data grid view
         private void LoadData()
         {
-            ListBox lb = new ListBox();
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                // Obtener los valores de las celdas de cada fila
-                string id = row.Cells["ID"].Value.ToString();
-                string userName = row.Cells["NombreUsuario"].Value.ToString();
-                string pass = row.Cells["Contraseña"].Value.ToString();
-                string name = row.Cells["Nombre"].Value.ToString();
-                string phone = row.Cells["Telefono"].Value.ToString();
+            //ListBox lb = new ListBox();
+            //lb.Items.Add(dgvid);
+            //lb.Items.Add(dgvuserName);
+            //lb.Items.Add(dgvpass);
+            //lb.Items.Add(dgvname);
+            //lb.Items.Add(dgvphone);
 
-                // Crear una cadena que contenga los valores de las celdas
-                string rowData = $"ID: {id}, NombreUsuario: {userName}, Contraseña: {pass}, Nombre: {name}, Teléfono: {phone}";
-
-                // Agregar la cadena al ListBox
-                lb.Items.Add(rowData);
-            }
-            //string qry = @"Select userID as ID, userName as NombreUsuario, upass as Contraseña, uName as Nombre, uPhone as Telefono from Category; - modificadopor Category- user po category
+            string qry = @"Select userID as ID, userName as NombreUsuario, upass as Contraseña, uName as Nombre, uPhone as Telefono from users";
             //   where uName like '%" + txtSearch.Text + " %' order by userID desc";
-
-            string qry = @"Select  * from Category
-            where catName like '%" + txtSearch.Text + " %' order by catID desc";
 
             // Agregar una cláusula WHERE para filtrar los resultados según el texto ingresado en txtSearch
             if (!string.IsNullOrWhiteSpace(txtSearch.Text))
@@ -200,12 +188,10 @@ namespace MiColmado.View
                 //Update
                 if (dataGridView1.CurrentCell.OwningColumn.Name == "dgvEdit")
                 {
-                    frmUserAdd frm = new frmUserAdd();
+                    frmCategoryAdd frm = new frmCategoryAdd();
                     frm.id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
                     frm.txtName.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["Nombre"].Value);
-                    frm.txtUserName.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["NombreUsuario"].Value);
-                    frm.txtPass.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["Contraseña"].Value);
-                    frm.txtPhone.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["Telefono"].Value);
+                   
 
                     MainClass.BlurBackground(frm);
                     LoadData();
@@ -216,7 +202,7 @@ namespace MiColmado.View
                 {
                     int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
 
-                    string qry = "DELETE FROM users WHERE userID = " + id;
+                    string qry = "DELETE FROM Category WHERE catID = " + id;
                     Hashtable ht = new Hashtable();
 
                     if (MainClass.SQL(qry, ht) > 0)

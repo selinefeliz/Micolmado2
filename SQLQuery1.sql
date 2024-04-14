@@ -1,10 +1,5 @@
-Use MiColmado
-CREATE TABLE users (
-    userID   INT PRIMARY KEY IDENTITY,
-    userName VARCHAR (50),
-    upass    VARCHAR (10),
-    uName    VARCHAR (50),
-    uPhone   VARCHAR (20),
-    uImage image
-    )
-select * from users
+﻿Create table Category
+(
+catID int primary key identity,
+catName varchar (150) not null
+)

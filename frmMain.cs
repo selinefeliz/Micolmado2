@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MiColmado.View2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -104,7 +105,7 @@ namespace MiColmado
         }
     }
 
-    internal class frmCategoryView: Form
-    {
-    }
+    //internal class frmCategoryView: Form
+    //{
+    //}
 }
