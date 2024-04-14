@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserAdd));
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
@@ -94,6 +95,7 @@
             this.txtPass.Size = new System.Drawing.Size(205, 27);
             this.txtPass.TabIndex = 7;
             this.txtPass.Tag = "v";
+            this.txtPass.UseSystemPasswordChar = true;
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
             // label4
@@ -124,7 +126,7 @@
             // 
             // txtPic
             // 
-            this.txtPic.Image = global::MiColmado.Properties.Resources.userPic;
+            this.txtPic.Image = ((System.Drawing.Image)(resources.GetObject("txtPic.Image")));
             this.txtPic.Location = new System.Drawing.Point(609, 158);
             this.txtPic.Name = "txtPic";
             this.txtPic.Size = new System.Drawing.Size(156, 148);

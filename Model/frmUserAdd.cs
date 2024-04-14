@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
+using System.Data.SqlClient;
+
 
 namespace MiColmado
 {
@@ -76,7 +78,10 @@ namespace MiColmado
         }
         private void frmUserAdd_Load(object sender, EventArgs e)
         {
-
+            if (id > 0)
+            {
+                LoadImage();
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -104,7 +109,7 @@ namespace MiColmado
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Images(.jpg, .png) | *.png; *jpg";
+            ofd.Filter = "Images(.jpg, .png)|*.png; *jpg";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 filePath = ofd.FileName;
@@ -121,5 +126,29 @@ namespace MiColmado
         {
 
         }
+
+        private void LoadImage()
+        {
+            string qry = @"Select uImage from users where userID = " +id+ " ";
+            SqlCommand cmd = new SqlCommand(qry,MainClass.con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+                byte[] imageArray = (byte[])dt.Rows[0]["uImage"];
+                using (MemoryStream ms = new MemoryStream(imageArray))
+                {
+                    txtPic.Image = Image.FromStream(ms);
+                }
+            } 
+        }
+
+    
+    
+    
+    
     }
+
 }

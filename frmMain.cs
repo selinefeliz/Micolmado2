@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace MiColmado
@@ -46,8 +47,8 @@ namespace MiColmado
             _obj = this;
             //para que aparezca el nombre de usuario en la barra lateral
             lbusuario.Text = MainClass.USER;
-            lblUser
-
+            // Establecer la imagen del perfil
+            pictureBox1.Image = MainClass.IMG;
         }
         
 
@@ -77,6 +78,7 @@ namespace MiColmado
         {
             //aqui se abre el formulario user View(el que tiene el datagridview)
             AddControls(new View.frmUserView()); 
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -84,9 +86,9 @@ namespace MiColmado
 
         }
 
-        private void btnCategoria_Click(object sender, EventArgs e)
+        private void btnCategoria_Click(object sender, EventArgs e)//View2 utilizar
         {
-
+            AddControls(new frmCategoryView());
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
@@ -100,5 +102,9 @@ namespace MiColmado
             frmLogin frml = new frmLogin();
             frml.Show();
         }
+    }
+
+    internal class frmCategoryView: Form
+    {
     }
 }

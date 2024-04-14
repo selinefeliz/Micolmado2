@@ -8,18 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MiColmado.Model;
 
-namespace MiColmado.View
+namespace MiColmado.View2
 {
-    public partial class frmUserView : SampleView
+    public partial class frmCategoryView : SampleView
     {
-        public frmUserView()
+        public frmCategoryView()
         {
             InitializeComponent();
         }
 
-        private void frmUserView_Load(object sender, EventArgs e)//Cambi
+        private void frmCategoryView_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+      /*  public frmUserView()
+        {
+            InitializeComponent();
+        }*/
+
+        private void frmUserView_Load(object sender, EventArgs e)
         {
             LoadData();
             AgregarDgv(); //agrega los nuevos campos
@@ -39,28 +47,26 @@ namespace MiColmado.View
         //para que carge los datos del data grid view
         private void LoadData()
         {
-            ListBox lb = new ListBox();
+           // ListBox lb = new ListBox();
+           // lb.Items.Add(dgvid);
+           // lb.Items.Add(dgvuserName);
+            //lb.Items.Add(dgvpass);
+            //lb.Items.Add(dgvname);
+            //lb.Items.Add(dgvphone);
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                // Obtener los valores de las celdas de cada fila
+                // Aquí accedemos a los valores de las celdas en cada fila
+                ListBox lb = new ListBox();
                 string id = row.Cells["ID"].Value.ToString();
-                string userName = row.Cells["NombreUsuario"].Value.ToString();
-                string pass = row.Cells["Contraseña"].Value.ToString();
-                string name = row.Cells["Nombre"].Value.ToString();
-                string phone = row.Cells["Telefono"].Value.ToString();
+                var name = row.Cells["Nombre"].Value.ToString();
+              
 
-                // Crear una cadena que contenga los valores de las celdas
-                string rowData = $"ID: {id}, NombreUsuario: {userName}, Contraseña: {pass}, Nombre: {name}, Teléfono: {phone}";
-
-                // Agregar la cadena al ListBox
-                lb.Items.Add(rowData);
+                // Concatenamos los valores en una cadena y los agregamos al ListBox
+                string item = $"ID: {id},  Nombre: {name}";
+                lb.Items.Add(item);
             }
-            //string qry = @"Select userID as ID, userName as NombreUsuario, upass as Contraseña, uName as Nombre, uPhone as Telefono from Category; - modificadopor Category- user po category
-            //   where uName like '%" + txtSearch.Text + " %' order by userID desc";
-
-            string qry = @"Select  * from Category
+            string qry = @"Select * from Category
             where catName like '%" + txtSearch.Text + " %' order by catID desc";
-
             // Agregar una cláusula WHERE para filtrar los resultados según el texto ingresado en txtSearch
             if (!string.IsNullOrWhiteSpace(txtSearch.Text))
             {
@@ -69,6 +75,10 @@ namespace MiColmado.View
                        "userName LIKE '%" + txtSearch.Text + "%' OR " +
                        "upass LIKE '%" + txtSearch.Text + "%' OR " +
                        "uPhone LIKE '%" + txtSearch.Text + "%'";
+
+                MessageBox.Show("Deleted Successfully..", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData();
+
             }
 
             MainClass.LoadData(qry, dataGridView1);//, lb);
@@ -216,7 +226,7 @@ namespace MiColmado.View
                 {
                     int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
 
-                    string qry = "DELETE FROM users WHERE userID = " + id;
+                    string qry = "Delete from where userID = " + id + "";
                     Hashtable ht = new Hashtable();
 
                     if (MainClass.SQL(qry, ht) > 0)
@@ -228,6 +238,29 @@ namespace MiColmado.View
 
                 }
             }
+        }
+        //private void panel1_Paint(object sender, PaintEventArgs e)
+        //{
+
+        //}
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            // Aquí puedes agregar la lógica para manejar el evento Click del panel
+        }
+
+        private void dataGridView1_CellContentClick_3(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

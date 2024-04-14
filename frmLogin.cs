@@ -23,26 +23,26 @@ namespace MiColmado
         private void btnLogin_Click(object sender, EventArgs e)
         {
             ////validando las credenciales del usuario
-            //if ((MainClass.IsValidUser(txtUsuario.Text, txtContrasena.Text)) == false)
-            //{
-            //    MessageBox.Show("Contraseña o usuario incorrectas");
-            //    return;
+            if ((MainClass.IsValidUser(txtUsuario.Text, txtContrasena.Text)) == false)
+            {
+                MessageBox.Show("Contraseña o usuario incorrectas");
+                return;
 
-            //}
-            //else
-            //{
+            }
+            else
+            {
 
-            //    ///Para que se abra el form que sigue despues de logearse
-            //    this.Hide();
-            //    frmMain frm = new frmMain();
-            //    frm.Show();
+                ///Para que se abra el form que sigue despues de logearse
+                this.Hide();
+                frmMain frm = new frmMain();
+                frm.Show();
 
-            //}
+            }
 
             //eliminar esta parte cuando descomentes el codigo que esta arriba
-            this.Hide();
-            frmMain frm = new frmMain();
-            frm.Show();
+            //this.Hide();
+            //frmMain frm = new frmMain();
+            //frm.Show();
         }
 
         private void frmLogin_Load(object sender, EventArgs e)

@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.Panel = new System.Windows.Forms.Panel();
-            this.lbusuario = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.centerPanel = new System.Windows.Forms.Panel();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnCategoria = new System.Windows.Forms.Button();
+            this.lbusuario = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.centerPanel = new System.Windows.Forms.Panel();
             this.Panel.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel
@@ -62,38 +62,6 @@
             this.Panel.Size = new System.Drawing.Size(232, 584);
             this.Panel.TabIndex = 0;
             this.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // lbusuario
-            // 
-            this.lbusuario.AutoSize = true;
-            this.lbusuario.BackColor = System.Drawing.Color.Transparent;
-            this.lbusuario.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbusuario.Location = new System.Drawing.Point(48, 130);
-            this.lbusuario.Name = "lbusuario";
-            this.lbusuario.Size = new System.Drawing.Size(125, 17);
-            this.lbusuario.TabIndex = 2;
-            this.lbusuario.Text = "Nombre de Usuario";
-            this.lbusuario.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.centerPanel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(232, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(749, 584);
-            this.panel2.TabIndex = 1;
-            // 
-            // centerPanel
-            // 
-            this.centerPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.centerPanel.Location = new System.Drawing.Point(7, 12);
-            this.centerPanel.Name = "centerPanel";
-            this.centerPanel.Size = new System.Drawing.Size(730, 560);
-            this.centerPanel.TabIndex = 0;
-            this.centerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // btnEmpleados
             // 
@@ -184,6 +152,18 @@
             this.btnCategoria.UseVisualStyleBackColor = true;
             this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
+            // lbusuario
+            // 
+            this.lbusuario.AutoSize = true;
+            this.lbusuario.BackColor = System.Drawing.Color.Transparent;
+            this.lbusuario.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbusuario.Location = new System.Drawing.Point(48, 130);
+            this.lbusuario.Name = "lbusuario";
+            this.lbusuario.Size = new System.Drawing.Size(125, 17);
+            this.lbusuario.TabIndex = 2;
+            this.lbusuario.Text = "Nombre de Usuario";
+            this.lbusuario.Click += new System.EventHandler(this.label1_Click);
+            // 
             // btnHome
             // 
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -207,8 +187,30 @@
             this.pictureBox1.Location = new System.Drawing.Point(51, 20);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(112, 95);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.centerPanel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(232, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(749, 584);
+            this.panel2.TabIndex = 1;
+            // 
+            // centerPanel
+            // 
+            this.centerPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.centerPanel.Location = new System.Drawing.Point(7, 12);
+            this.centerPanel.Name = "centerPanel";
+            this.centerPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.centerPanel.Size = new System.Drawing.Size(730, 560);
+            this.centerPanel.TabIndex = 0;
+            this.centerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // frmMain
             // 
@@ -225,8 +227,8 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.Panel.ResumeLayout(false);
             this.Panel.PerformLayout();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
