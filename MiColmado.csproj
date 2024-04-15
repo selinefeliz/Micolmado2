@@ -94,6 +94,18 @@
     <Compile Include="Model\frmCategoryAdd.Designer.cs">
       <DependentUpon>frmCategoryAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\frmCustomerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmCustomerAdd.Designer.cs">
+      <DependentUpon>frmCustomerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\frmSupplierAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmSupplierAdd.Designer.cs">
+      <DependentUpon>frmSupplierAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\frmUserAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,12 +118,6 @@
     </Compile>
     <Compile Include="Sample.Designer.cs">
       <DependentUpon>Sample.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,6 +145,18 @@
     <Compile Include="View2\frmCategoryView.Designer.cs">
       <DependentUpon>frmCategoryView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View2\frmCustomerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View2\frmCustomerView.Designer.cs">
+      <DependentUpon>frmCustomerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View2\frmSupplierView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View2\frmSupplierView.Designer.cs">
+      <DependentUpon>frmSupplierView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmCategoria.resx">
       <DependentUpon>frmCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,14 +169,14 @@
     <EmbeddedResource Include="Model\frmCategoryAdd.resx">
       <DependentUpon>frmCategoryAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmCustomerAdd.resx">
+      <DependentUpon>frmCustomerAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model\frmUserAdd.resx">
       <DependentUpon>frmUserAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sample.resx">
       <DependentUpon>Sample.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -181,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View2\frmCategoryView.resx">
       <DependentUpon>frmCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View2\frmCustomerView.resx">
+      <DependentUpon>frmCustomerView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="MiColmadoSQLDataSet.xsc">
       <DependentUpon>MiColmadoSQLDataSet.xsd</DependentUpon>
@@ -260,6 +281,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buscarIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

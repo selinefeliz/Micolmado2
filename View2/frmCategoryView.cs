@@ -22,15 +22,16 @@ namespace MiColmado.View2
         private void frmCategoryView_Load(object sender, EventArgs e)
         {
             LoadData();
-        }
-     
-
-        private void frmUserView_Load(object sender, EventArgs e)
-        {
-            LoadData();
+   
             AgregarDgv(); //agrega los nuevos campos
             txtSearch.KeyPress += txtSearch_KeyPress; // Suscribir el evento KeyPress al método txtSearch_KeyPress
         }
+     
+
+       /* private void frmUserView_Load(object sender, EventArgs e)
+        {
+            
+        }*/
         public override void btnAdd_Click(object sender, EventArgs e)
         {
             //MainClass.BlurBackground(new frmUserAdd()); //aqui se abre el nuevo formulario
@@ -138,6 +139,7 @@ namespace MiColmado.View2
         {
 
         }
+      //Agregando botones 
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -153,36 +155,8 @@ namespace MiColmado.View2
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
-            {
-                //Update
-                if (dataGridView1.CurrentCell.OwningColumn.Name == "dgvEdit")
-                {
-                    frmCategoryAdd frm = new frmCategoryAdd();
-                    frm.id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
-                    frm.txtName.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["Nombre"].Value);
-                  
-
-                    MainClass.BlurBackground(frm);
-                    LoadData();
-                }
-
-                // Delete
-                if (dataGridView1.CurrentCell.OwningColumn.Name == "dgvDel")
-                {
-                    int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
-
-                    string qry = "Delete from where userID = " + id + "";
-                    Hashtable ht = new Hashtable();
-
-                    if (MainClass.SQL(qry, ht) > 0)
-                    {
-                        MessageBox.Show("Deleted Successfully..", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadData();
-                    }
-
-
-                }
-            }
+            
+            
         }
         //private void panel1_Paint(object sender, PaintEventArgs e)
         //{
@@ -196,6 +170,45 @@ namespace MiColmado.View2
         private void dataGridView1_CellContentClick_3(object sender, DataGridViewCellEventArgs e)
         {
 
+            //Update
+            if (dataGridView1.CurrentCell.OwningColumn.Name == "dgvEdit")
+            {
+                frmCategoryAdd frm = new frmCategoryAdd();
+                frm.id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
+                frm.txtName.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["Name"].Value);
+
+
+                MainClass.BlurBackground(frm);
+                LoadData();
+            }
+
+            // Delete
+            if (dataGridView1.CurrentCell.OwningColumn.Name == "dgvDel")
+            {
+                //Confirmar antes de borrar
+
+               
+                DialogResult result = MessageBox.Show("¿Estás seguro de que quieres eliminar esto?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+
+                    int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
+
+                    string qry = "Delete from Category Where catID = " + id + "";
+                    Hashtable ht = new Hashtable();
+
+                    if (MainClass.SQL(qry, ht) > 0)
+                    {
+                        MessageBox.Show("Deleted Successfully..", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadData();
+                    }
+                }
+
+                  
+
+
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)

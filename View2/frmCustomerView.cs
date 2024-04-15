@@ -8,22 +8,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MiColmado.Model;
 
-namespace MiColmado.View
+namespace MiColmado.View2
 {
-    public partial class frmUserView : SampleView
+    public partial class frmCustomerView : SampleView
     {
-        public frmUserView()
+        public frmCustomerView()
         {
             InitializeComponent();
         }
 
-        private void frmUserView_Load(object sender, EventArgs e)//Cambi
+        private void frmCustomerView_Load(object sender, EventArgs e)
         {
-            LoadData();
-            AgregarDgv(); //agrega los nuevos campos
-            txtSearch.KeyPress += txtSearch_KeyPress; // Suscribir el evento KeyPress al método txtSearch_KeyPress
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
         public override void btnAdd_Click(object sender, EventArgs e)
         {
@@ -46,8 +53,11 @@ namespace MiColmado.View
             //lb.Items.Add(dgvname);
             //lb.Items.Add(dgvphone);
 
-            string qry = @"Select userID as ID, userName as NombreUsuario, upass as Contraseña, uName as Nombre, uPhone as Telefono from users";
-            //   where uName like '%" + txtSearch.Text + " %' order by userID desc";
+            //string qry = @"Select userID as ID, userName as NombreUsuario, upass as Contraseña, uName as Nombre, uPhone as Telefono from users";
+            string qry = @"Select * from Customer
+           where cusName as Nombre like '%" + txtSearch.Text + " %' order by cusID as ID desc";
+
+    //   where uName like '%" + txtSearch.Text + " %' order by userID desc";
 
             // Agregar una cláusula WHERE para filtrar los resultados según el texto ingresado en txtSearch
             if (!string.IsNullOrWhiteSpace(txtSearch.Text))
@@ -83,10 +93,10 @@ namespace MiColmado.View
             dataGridView1.Columns.Add(dgvEdit);
             dataGridView1.Columns.Add(dgvDel);
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
 
-        }
+        //}
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -109,9 +119,9 @@ namespace MiColmado.View
             LoadData();
         }
 
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-        }
+        //private void pictureBox1_Click_1(object sender, EventArgs e)
+        //{
+        //}
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -211,7 +221,7 @@ namespace MiColmado.View
                     {
                         int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
 
-                        string qry = "DELETE FROM user WHERE userID = " + id;
+                        string qry = "Delete from Customer where cusID = " + id;
                         Hashtable ht = new Hashtable();
 
                         if (MainClass.SQL(qry, ht) > 0)
@@ -226,5 +236,5 @@ namespace MiColmado.View
                 }
             }
         }
+ }       
     }
-}

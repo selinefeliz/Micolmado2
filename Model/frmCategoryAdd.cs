@@ -39,8 +39,8 @@ namespace MiColmado.Model
                 }
                 else //actualizar
                 {
-                    qry = @"UPDATE Category set catName = @name,
-                          where catID = @id";      
+                    qry = @"UPDATE Category set catName = @name
+                          Where catID = @id";      
 
                                /* upass = @pass,
                                 uName =@name,

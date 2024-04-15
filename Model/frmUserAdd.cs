@@ -40,7 +40,7 @@ namespace MiColmado
                 }
                 else //actualizar
                 {
-                    qry = @"UPDATE users set userName = @userName
+                    qry = @"UPDATE users set userName = @userName,
                                 upass = @pass,
                                 uName =@name,
                                 uPhone = @phone,

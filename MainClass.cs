@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.IO;
-using ComboBox = System.Windows.Forms.ComboBox;
+using ComboBox = System.Windows.Forms.ComboBox;  
 using TextBox = System.Windows.Forms.TextBox;
 
 namespace MiColmado
@@ -21,7 +21,7 @@ namespace MiColmado
     {
         //conexion con la base de datos (MODIFICAR PARA QUE USE LA BD DE TU MAQUINA) *Solo el string*
 
-        public static readonly string con_string = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\selin\\OneDrive\\Documentos\\MiColmado.mdf;Integrated Security=True;Connect Timeout=30";
+        public static readonly string con_string = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Daniel\\OneDrive - INTEC\\Documentos\\MiColmado.mdf\";Integrated Security=True;Connect Timeout=30";
         public static SqlConnection con = new SqlConnection(con_string);
 
         //metodo para comprobar la validacion de usuario
@@ -33,7 +33,7 @@ namespace MiColmado
             SqlCommand cmd = new SqlCommand(qry, con);
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+            da.Fill(dt);    
 
             if (dt.Rows.Count > 0)
             {

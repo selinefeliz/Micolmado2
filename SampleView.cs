@@ -15,6 +15,16 @@ namespace MiColmado
         public SampleView()
         {
             InitializeComponent();
+
+            //para eliminar categorias 
+            /*// Preguntar al usuario si está seguro de eliminar
+            DialogResult result = MessageBox.Show(frmMain.Instance, "¿Estás seguro de que quieres eliminar esto?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Verificar la respuesta del usuario
+            if (result == DialogResult.Yes)
+            {
+
+            }*/
         }
 
         private void SampleView_Load(object sender, EventArgs e)
