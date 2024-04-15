@@ -19,7 +19,7 @@ namespace MiColmado
 {
     internal class MainClass
     {
-        //conexion con la base de datos (MODIFICAR PARA QUE USE LA BD DE TU MAQUINA) *Solo el string*
+        //conexion con la base de datos (MODIFICAR PARA QUE USE LA BD DE TU MAQUINA) *Solo el string* OJO
 
         public static readonly string con_string = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\selin\\OneDrive\\Documentos\\MiColmado.mdf;Integrated Security=True;Connect Timeout=30";
         public static SqlConnection con = new SqlConnection(con_string);
