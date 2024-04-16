@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.Panel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@
             // Panel
             // 
             this.Panel.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.Panel.Controls.Add(this.button1);
             this.Panel.Controls.Add(this.btnEmpleados);
             this.Panel.Controls.Add(this.btnProveedores);
             this.Panel.Controls.Add(this.btnCompras);
@@ -63,6 +65,24 @@
             this.Panel.TabIndex = 0;
             this.Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // button1
+            // 
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Snow;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Image = global::MiColmado.Properties.Resources.empleadosIcon;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(29, 454);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(197, 40);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Clientes";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // btnEmpleados
             // 
             this.btnEmpleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -73,7 +93,7 @@
             this.btnEmpleados.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnEmpleados.Image = global::MiColmado.Properties.Resources.empleadosIcon;
             this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(10, 477);
+            this.btnEmpleados.Location = new System.Drawing.Point(29, 408);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(197, 40);
             this.btnEmpleados.TabIndex = 7;
@@ -91,7 +111,7 @@
             this.btnProveedores.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnProveedores.Image = global::MiColmado.Properties.Resources.proveedoresIcon;
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(10, 420);
+            this.btnProveedores.Location = new System.Drawing.Point(29, 362);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(197, 40);
             this.btnProveedores.TabIndex = 6;
@@ -109,7 +129,7 @@
             this.btnCompras.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCompras.Image = global::MiColmado.Properties.Resources.comprasIcon;
             this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompras.Location = new System.Drawing.Point(12, 374);
+            this.btnCompras.Location = new System.Drawing.Point(29, 316);
             this.btnCompras.Name = "btnCompras";
             this.btnCompras.Size = new System.Drawing.Size(197, 40);
             this.btnCompras.TabIndex = 5;
@@ -127,7 +147,7 @@
             this.btnProductos.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnProductos.Image = global::MiColmado.Properties.Resources.productosIcon;
             this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.Location = new System.Drawing.Point(10, 319);
+            this.btnProductos.Location = new System.Drawing.Point(29, 270);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(197, 40);
             this.btnProductos.TabIndex = 4;
@@ -145,7 +165,7 @@
             this.btnCategoria.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCategoria.Image = global::MiColmado.Properties.Resources.categoriaIcon;
             this.btnCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategoria.Location = new System.Drawing.Point(10, 253);
+            this.btnCategoria.Location = new System.Drawing.Point(29, 224);
             this.btnCategoria.Name = "btnCategoria";
             this.btnCategoria.Size = new System.Drawing.Size(197, 40);
             this.btnCategoria.TabIndex = 3;
@@ -175,7 +195,7 @@
             this.btnHome.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnHome.Image = global::MiColmado.Properties.Resources.homa__1_;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(10, 186);
+            this.btnHome.Location = new System.Drawing.Point(29, 178);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(197, 40);
             this.btnHome.TabIndex = 1;
@@ -200,6 +220,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(749, 584);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // centerPanel
             // 
@@ -247,5 +268,6 @@
         private System.Windows.Forms.Button btnCategoria;
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnProveedores;
+        private System.Windows.Forms.Button button1;
     }
 }

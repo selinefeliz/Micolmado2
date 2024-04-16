@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MiColmado.Model;
 
 namespace MiColmado.View2
 {
@@ -20,6 +21,10 @@ namespace MiColmado.View2
 
         private void frmCustomerView_Load(object sender, EventArgs e)
         {
+            LoadData();
+            AgregarDgv(); //agrega los nuevos campos
+
+            txtSearch.KeyPress += txtSearch2_KeyPress; // Suscribir el evento KeyPress al método txtSearch_KeyPress
 
         }
 
@@ -30,11 +35,11 @@ namespace MiColmado.View2
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            LoadData();
         }
         public override void btnAdd_Click(object sender, EventArgs e)
         {
-            MainClass.BlurBackground(new frmUserAdd()); //aqui se abre el nuevo formulario
+            MainClass.BlurBackground(new frmCustomerAdd()); //aqui se abre el nuevo formulario
             LoadData();
         }
 
@@ -47,26 +52,24 @@ namespace MiColmado.View2
         private void LoadData()
         {
             //ListBox lb = new ListBox();
-            //lb.Items.Add(dgvid);
-            //lb.Items.Add(dgvuserName);
-            //lb.Items.Add(dgvpass);
-            //lb.Items.Add(dgvname);
-            //lb.Items.Add(dgvphone);
+            //lb.Items.Add(cID);
+            //lb.Items.Add(cNum);
+            //lb.Items.Add(cName);
+            //lb.Items.Add(cphone);
+            //lb.Items.Add(cEmail);
 
             //string qry = @"Select userID as ID, userName as NombreUsuario, upass as Contraseña, uName as Nombre, uPhone as Telefono from users";
-            string qry = @"Select * from Customer
-           where cusName as Nombre like '%" + txtSearch.Text + " %' order by cusID as ID desc";
+            string qry = @"Select cusName as Nombre, CusPhone as Telefono, CusEmail as Email from Customer";
 
-    //   where uName like '%" + txtSearch.Text + " %' order by userID desc";
 
-            // Agregar una cláusula WHERE para filtrar los resultados según el texto ingresado en txtSearch
-            if (!string.IsNullOrWhiteSpace(txtSearch.Text))
+
+            //Agregar una cláusula WHERE para filtrar los resultados según el texto ingresado en txtSearch
+            if (!string.IsNullOrWhiteSpace(txtSearch2.Text))
             {
                 // Agregar una condición OR para buscar en múltiples campos
-                qry += " WHERE uName LIKE '%" + txtSearch.Text + "%' OR " +
-                       "userName LIKE '%" + txtSearch.Text + "%' OR " +
-                       "upass LIKE '%" + txtSearch.Text + "%' OR " +
-                       "uPhone LIKE '%" + txtSearch.Text + "%'";
+                qry += " WHERE cusName LIKE '%" + txtSearch2.Text + "%' OR " +
+                       "CusPhone LIKE '%" + txtSearch2.Text + "%' OR " +
+                       "CusEmail LIKE '%" + txtSearch2.Text + "%'";
             }
 
             MainClass.LoadData(qry, dataGridView1);//, lb);
@@ -115,7 +118,7 @@ namespace MiColmado.View2
 
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            MainClass.BlurBackground(new frmUserAdd());
+            MainClass.BlurBackground(new frmCustomerView());
             LoadData();
         }
 
@@ -143,12 +146,23 @@ namespace MiColmado.View2
 
         }
 
-        private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void panel1_Paint_2(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnAdd_Click_2(object sender, EventArgs e)
+        {
+            MainClass.BlurBackground(new frmCustomerAdd()); //aqui se abre el nuevo formulario
+            LoadData();
+        }
+
+        private void txtSearch2_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si se presiona la tecla Enter
             if (e.KeyChar == (char)Keys.Enter)
@@ -158,83 +172,5 @@ namespace MiColmado.View2
                 e.Handled = true; // Manejar el evento para evitar que se emita el sonido de error de Windows
             }
         }
-
-        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-            /* if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvEdit")
-             { 
-                 frmUserAdd frm = new frmUserAdd();
-            frm.id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
-            frm.txtName.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvname"].Value);
-            frm.txtUser.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvuserName"].Value);
-            frm.txtPass.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvpass"].Value);
-            frm.txtPhone.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgphone"].Value);
-
-             MainClass.BlurBackground(frm);
-                 LoadData();
-             }
-             //Delete
-             if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvDe1")
-             {
-                int id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value)
-
-                 string qry = "Delet from users where userID = " + id + "";
-                 Hashtable ht = new Hashtable();
-
-                 if (MainClass.SQL(qry, ht) > 0)
-                 {
-                     guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogoButtons.OK;
-                     guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
-                     guna2MessageDialog1.Ic Show("Deleted Successfully..");
-            LoadData();
-
-                 }
-
-             }*/
-
-            {
-                //Update
-                if (dataGridView1.CurrentCell.OwningColumn.Name == "dgvEdit")
-                {
-                    frmUserAdd frm = new frmUserAdd();
-                    frm.id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
-                    frm.txtName.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["Nombre"].Value);
-                    frm.txtUserName.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["NombreUsuario"].Value);
-                    frm.txtPass.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["Contraseña"].Value);
-                    frm.txtPhone.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["Telefono"].Value);
-
-                    MainClass.BlurBackground(frm);
-                    LoadData();
-                }
-
-                // Delete
-
-                ////Confirmar antes de borrar
-                if (dataGridView1.CurrentCell.OwningColumn.Name == "dgvDel")
-                {
-
-                    DialogResult result = MessageBox.Show("¿Estás seguro de que quieres eliminar esto?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (result == DialogResult.Yes)
-                    {
-                        int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
-
-                        string qry = "Delete from Customer where cusID = " + id;
-                        Hashtable ht = new Hashtable();
-
-                        if (MainClass.SQL(qry, ht) > 0)
-                        {
-                            MessageBox.Show("Deleted Successfully..", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LoadData();
-                        }
-
-                    }
-
-
-                }
-            }
-        }
- }       
-    }
+    }       
+}

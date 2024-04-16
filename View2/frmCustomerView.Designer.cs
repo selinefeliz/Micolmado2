@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.txtSearch2 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -38,7 +39,15 @@
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(961, 129);
+            this.panel1.Controls.Add(this.txtSearch2);
+            this.panel1.Size = new System.Drawing.Size(756, 144);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_2);
+            this.panel1.Controls.SetChildIndex(this.txtSearch2, 0);
+            this.panel1.Controls.SetChildIndex(this.label1, 0);
+            this.panel1.Controls.SetChildIndex(this.label2, 0);
+            this.panel1.Controls.SetChildIndex(this.btnAdd, 0);
+            this.panel1.Controls.SetChildIndex(this.txtSearch, 0);
+            this.panel1.Controls.SetChildIndex(this.pictureBox1, 0);
             // 
             // label1
             // 
@@ -47,23 +56,32 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(566, 81);
+            this.txtSearch.Location = new System.Drawing.Point(1813, 81);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Size = new System.Drawing.Size(227, 31);
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(1168, 68);
+            this.label2.Location = new System.Drawing.Point(2415, 68);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(763, 81);
+            this.pictureBox1.Location = new System.Drawing.Point(480, 82);
             this.pictureBox1.Size = new System.Drawing.Size(30, 31);
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // btnAdd
             // 
             this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_2);
+            // 
+            // txtSearch2
+            // 
+            this.txtSearch2.Location = new System.Drawing.Point(516, 88);
+            this.txtSearch2.Name = "txtSearch2";
+            this.txtSearch2.Size = new System.Drawing.Size(173, 25);
+            this.txtSearch2.TabIndex = 5;
+            this.txtSearch2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch2_KeyPress);
             // 
             // dataGridView1
             // 
@@ -85,7 +103,7 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(44, 171);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 162);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -98,16 +116,14 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowHeadersWidth = 35;
-            this.dataGridView1.Size = new System.Drawing.Size(749, 305);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.Size = new System.Drawing.Size(692, 305);
+            this.dataGridView1.TabIndex = 6;
             // 
             // frmCustomerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(961, 588);
+            this.ClientSize = new System.Drawing.Size(756, 588);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCustomerView";
@@ -124,7 +140,7 @@
         }
 
         #endregion
-
+        private System.Windows.Forms.TextBox txtSearch2;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

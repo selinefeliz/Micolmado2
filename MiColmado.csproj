@@ -83,10 +83,34 @@
     <Compile Include="frmMain.designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUserView.cs">
+    <Compile Include="Model\frmProductAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUserView.Designer.cs">
+    <Compile Include="Model\frmProductAdd.Designer.cs">
+      <DependentUpon>frmProductAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\frmPurchaseAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmPurchaseAdd.Designer.cs">
+      <DependentUpon>frmPurchaseAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View2\frmProductView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View2\frmProductView.Designer.cs">
+      <DependentUpon>frmProductView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View2\frmPurchaseView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View2\frmPurchaseView.Designer.cs">
+      <DependentUpon>frmPurchaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View2\frmUserView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View2\frmUserView.Designer.cs">
       <DependentUpon>frmUserView.cs</DependentUpon>
     </Compile>
     <Compile Include="MiColmadoSQLDataSet.Designer.cs">
@@ -172,7 +196,19 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUserView.resx">
+    <EmbeddedResource Include="Model\frmProductAdd.resx">
+      <DependentUpon>frmProductAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmPurchaseAdd.resx">
+      <DependentUpon>frmPurchaseAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View2\frmProductView.resx">
+      <DependentUpon>frmProductView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View2\frmPurchaseView.resx">
+      <DependentUpon>frmPurchaseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View2\frmUserView.resx">
       <DependentUpon>frmUserView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\frmCategoryAdd.resx">
@@ -180,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Model\frmCustomerAdd.resx">
       <DependentUpon>frmCustomerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmSupplierAdd.resx">
+      <DependentUpon>frmSupplierAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\frmUserAdd.resx">
       <DependentUpon>frmUserAdd.cs</DependentUpon>
@@ -211,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View2\frmCustomerView.resx">
       <DependentUpon>frmCustomerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View2\frmSupplierView.resx">
+      <DependentUpon>frmSupplierView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="MiColmadoSQLDataSet.xsc">
       <DependentUpon>MiColmadoSQLDataSet.xsd</DependentUpon>

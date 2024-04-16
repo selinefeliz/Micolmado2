@@ -111,6 +111,7 @@
             this.Controls.Add(this.label2);
             this.Name = "frmCustomerAdd";
             this.Text = "frmCustomerAdd";
+            this.Load += new System.EventHandler(this.frmCustomerAdd_Load);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.txtName, 0);
             this.Controls.SetChildIndex(this.label3, 0);

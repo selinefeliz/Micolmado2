@@ -94,7 +94,7 @@ namespace MiColmado
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-
+            AddControls(new frmProductView());
         }
 
         //para que cuando se cierre el formulario Main aparezca el frmLogin
@@ -107,6 +107,16 @@ namespace MiColmado
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             AddControls(new frmSupplierView());
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AddControls(new frmCustomerView());
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

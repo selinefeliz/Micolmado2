@@ -86,8 +86,9 @@ namespace MiColmado.Model
             }
         }
 
+        private void frmCustomerAdd_Load(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }

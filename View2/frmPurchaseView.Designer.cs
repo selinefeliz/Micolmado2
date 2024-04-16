@@ -1,6 +1,6 @@
 ﻿namespace MiColmado.View2
 {
-    partial class frmCategoryView
+    partial class frmPurchaseView
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -39,31 +38,30 @@
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(856, 134);
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.Size = new System.Drawing.Size(788, 129);
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(121, 25);
-            this.label1.Text = "Category List";
+            this.label1.Size = new System.Drawing.Size(153, 25);
+            this.label1.Text = "Lista de compras";
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(595, 88);
+            this.txtSearch.Location = new System.Drawing.Point(469, 94);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Size = new System.Drawing.Size(227, 31);
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(592, 68);
+            this.label2.Location = new System.Drawing.Point(466, 68);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(788, 60);
+            this.pictureBox1.Location = new System.Drawing.Point(843, 68);
             // 
             // btnAdd
             // 
             this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.Size = new System.Drawing.Size(118, 45);
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_2);
             // 
             // dataGridView1
             // 
@@ -85,7 +83,7 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(44, 158);
+            this.dataGridView1.Location = new System.Drawing.Point(28, 155);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -98,45 +96,31 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowHeadersWidth = 35;
-            this.dataGridView1.Size = new System.Drawing.Size(778, 370);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_3);
+            this.dataGridView1.Size = new System.Drawing.Size(748, 314);
+            this.dataGridView1.TabIndex = 34;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(60, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Click += new System.EventHandler(this.label3_Click_1);
-            // 
-            // frmCategoryView
+            // frmPurchaseView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 561);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(788, 588);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "frmCategoryView";
-            this.Text = "Categoey List";
-            this.Load += new System.EventHandler(this.frmCategoryView_Load);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "frmPurchaseView";
+            this.Text = "frmPurchaseView";
+            this.Load += new System.EventHandler(this.frmPurchaseView_Load);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label3;
     }
 }

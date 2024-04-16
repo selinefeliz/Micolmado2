@@ -12,22 +12,29 @@ using MiColmado.Model;
 
 namespace MiColmado.View2
 {
-    public partial class frmSupplierView : SampleView
+    public partial class frmProductView : SampleView
     {
-        public frmSupplierView()
+        public frmProductView()
         {
             InitializeComponent();
         }
 
-        private void frmSupplierView_Load(object sender, EventArgs e)//Cambi
+        private void frmProductView_Load(object sender, EventArgs e)
         {
             LoadData();
             AgregarDgv(); //agrega los nuevos campos
-            txtSearch.KeyPress += txtSearch_KeyPress_1; // Suscribir el evento KeyPress al método txtSearch_KeyPress
+            txtSearch.KeyPress += txtSearch_KeyPress;
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+      
         public override void btnAdd_Click(object sender, EventArgs e)
         {
-            MainClass.BlurBackground(new frmSupplierAdd()); //aqui se abre el nuevo formulario
+            MainClass.BlurBackground(new frmProductAdd()); //aqui se abre el nuevo formulario
             LoadData();
         }
 
@@ -40,23 +47,26 @@ namespace MiColmado.View2
         private void LoadData()
         {
             //ListBox lb = new ListBox();
-            //lb.Items.Add(sID);
-            //lb.Items.Add(sName);
-            //lb.Items.Add(sphone);
-            //lb.Items.Add(sEmail);
-            //lb.Items.Add(sNum);
+            //lb.Items.Add(dgvNum);
+            //lb.Items.Add(dgvCodigo);
+            //lb.Items.Add(dvgCatId);
+            //lb.Items.Add(dgvCategoria);
+            //lb.Items.Add(dgvCosto);
+            //lb.Items.Add(dgvPrecio);
 
-            string qry = @"Select supID as ID, supName as Nombre, supPhone as Telefono, 
-                            supEmail as Email from Supplier";
+            string qry = @"Select proID as ID, pName as Nombre, pcatID as Categoria, pBarcode as Codigo, pCost as Costo, pPrice as Precio from Product
+                            inner join Category on catID = pcatID "; //el segundo catID es del la tabla producto
+            //   where uName like '%" + txtSearch.Text + " %' order by userID desc";
 
             // Agregar una cláusula WHERE para filtrar los resultados según el texto ingresado en txtSearch
             if (!string.IsNullOrWhiteSpace(txtSearch.Text))
             {
                 // Agregar una condición OR para buscar en múltiples campos
-                qry += " WHERE supID LIKE '%" + txtSearch.Text + "%' OR " +
-                       "supName LIKE '%" + txtSearch.Text + "%' OR " +
-                       "supPhone LIKE '%" + txtSearch.Text + "%' OR " +
-                       "supEmail LIKE '%" + txtSearch.Text + "%'";
+                qry += " WHERE pName LIKE '%" + txtSearch.Text + "%' OR " +
+                       "catID LIKE '%" + txtSearch.Text + "%' OR " +
+                       "pBarcode LIKE '%" + txtSearch.Text + "%' OR " +
+                       "pCost LIKE '%" + txtSearch.Text + "%' OR " +
+                       "pPrice LIKE '%" + txtSearch.Text + "%'";
             }
 
             MainClass.LoadData(qry, dataGridView1);//, lb);
@@ -83,6 +93,10 @@ namespace MiColmado.View2
             dataGridView1.Columns.Add(dgvEdit);
             dataGridView1.Columns.Add(dgvDel);
         }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -101,12 +115,17 @@ namespace MiColmado.View2
 
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            MainClass.BlurBackground(new frmSupplierAdd());
+            MainClass.BlurBackground(new frmProductAdd());
             LoadData();
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -126,21 +145,6 @@ namespace MiColmado.View2
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
-        }
-
-        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void txtSearch_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
             // Verificar si se presiona la tecla Enter
             if (e.KeyChar == (char)Keys.Enter)
             {
@@ -150,15 +154,27 @@ namespace MiColmado.View2
             }
         }
 
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_3(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.CurrentCell.OwningColumn.Name == "dgvEdit")
             {
-                frmSupplierAdd frm = new frmSupplierAdd();
+                frmProductAdd frm = new frmProductAdd();
                 frm.id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
-                frm.txtName.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["Nombre"].Value);
-                frm.txtPhone.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["Telefono"].Value);
-                frm.txtEmail.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["Email"].Value);
+                frm.catID = Convert.ToInt32(dataGridView1.CurrentRow.Cells["Categoria"].Value);
+                frm.txtNombre.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["Nombre"].Value);
+                frm.txtCodigo.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["Codigo"].Value);
+                frm.txtCosto.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["Costo"].Value);
+                frm.txtPrecio.Text = Convert.ToString(dataGridView1.CurrentRow.Cells["Precio"].Value);
 
                 MainClass.BlurBackground(frm);
                 LoadData();
@@ -176,7 +192,7 @@ namespace MiColmado.View2
                 {
                     int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
 
-                    string qry = "DELETE FROM Supplier WHERE supID = " + id;
+                    string qry = "DELETE FROM Product WHERE proID = " + id;
                     Hashtable ht = new Hashtable();
 
                     if (MainClass.SQL(qry, ht) > 0)
@@ -186,7 +202,14 @@ namespace MiColmado.View2
                     }
 
                 }
+
+
             }
+        }
+
+        private void panel1_Paint_2(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -15,6 +15,7 @@ using System.IO;
 using ComboBox = System.Windows.Forms.ComboBox;  
 using TextBox = System.Windows.Forms.TextBox;
 
+
 namespace MiColmado
 {
     internal class MainClass
@@ -78,8 +79,6 @@ namespace MiColmado
             get { return img; }
             private set { img = value; }
         }
-        //Para la imagen del usuario (falta por continuar)
-
 
         ///Metodo para crear las funciones de Create, Update, Read,Delete CURF operations
         ///
@@ -128,14 +127,7 @@ namespace MiColmado
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                /*
-                for (int i = 0; i < lb.Items.Count; i++)
-                {
-                    string colNam1 = ((DataGridViewColumn)lb.Items[i]).Name;
-                    gv.Columns[colNam1].DataPropertyName = dt.Columns[i].ToString();
-
-                }
-                */
+              
                 gv.DataSource = dt;
 
                 
@@ -149,20 +141,6 @@ namespace MiColmado
             }
         }
 
-        ////para Darle formato a las filas del dataGridView
-        /**private static void gv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            DataGridView gv = (DataGridView)sender;
-            int count = 0;
-
-            foreach (DataGridViewRow row in gv.Rows)
-            {
-                count++;
-               // row.Cells[0].Value = count;
-            }
-            
-        }
-        */
 
         //para que se ponga borrrosa la pantalla 
         public static void BlurBackground(Form Model)
