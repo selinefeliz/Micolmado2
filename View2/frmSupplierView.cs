@@ -12,9 +12,9 @@ namespace MiColmado.View2
 {
     public partial class frmSupplierView : SampleView
     {
-        public frmSupplierView()
-        {
-            InitializeComponent();
-        }
+ 
+
+
+
     }
 }
