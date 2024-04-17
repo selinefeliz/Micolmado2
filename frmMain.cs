@@ -71,6 +71,7 @@ namespace MiColmado
 
         private void button4_Click(object sender, EventArgs e)
         {
+            AddControls(new View2.frmPurchaseView());
 
         }
 

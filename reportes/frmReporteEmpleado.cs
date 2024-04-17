@@ -7,21 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MiColmado.reportes;
 
-namespace MiColmado
+namespace MiColmado.reportes
 {
-    public partial class frmHome : Form
+    public partial class frmReporteEmpleado : Form
     {
-        public frmHome()
+        public frmReporteEmpleado()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void frmReporteEmpleado_Load(object sender, EventArgs e)
         {
-            frmReporteEmpleado reporteEmpleado = new frmReporteEmpleado();
-            reporteEmpleado.ShowDialog();
+
+            this.reportViewer1.RefreshReport();
         }
     }
 }

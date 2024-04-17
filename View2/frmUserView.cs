@@ -39,13 +39,7 @@ namespace MiColmado.View
         //para que carge los datos del data grid view
         private void LoadData()
         {
-            //ListBox lb = new ListBox();
-            //lb.Items.Add(dgvid);
-            //lb.Items.Add(dgvuserName);
-            //lb.Items.Add(dgvpass);
-            //lb.Items.Add(dgvname);
-            //lb.Items.Add(dgvphone);
-
+           
             string qry = @"Select userID as ID, userName as NombreUsuario, upass as Contraseña, 
                             uName as Nombre, uPhone as Telefono from users";
             //   where uName like '%" + txtSearch.Text + " %' order by userID desc";
@@ -152,38 +146,6 @@ namespace MiColmado.View
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
-
-            /* if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvEdit")
-             { 
-                 frmUserAdd frm = new frmUserAdd();
-            frm.id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
-            frm.txtName.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvname"].Value);
-            frm.txtUser.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvuserName"].Value);
-            frm.txtPass.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvpass"].Value);
-            frm.txtPhone.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgphone"].Value);
-
-             MainClass.BlurBackground(frm);
-                 LoadData();
-             }
-             //Delete
-             if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvDe1")
-             {
-                int id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value)
-
-                 string qry = "Delet from users where userID = " + id + "";
-                 Hashtable ht = new Hashtable();
-
-                 if (MainClass.SQL(qry, ht) > 0)
-                 {
-                     guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogoButtons.OK;
-                     guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
-                     guna2MessageDialog1.Ic Show("Deleted Successfully..");
-            LoadData();
-
-                 }
-
-             }*/
 
             {
                 //Update

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductAdd));
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtNombre1 = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
@@ -145,7 +144,7 @@
             // 
             // txtPic
             // 
-            this.txtPic.Image = ((System.Drawing.Image)(resources.GetObject("txtPic.Image")));
+            this.txtPic.Image = global::MiColmado.Properties.Resources.productos;
             this.txtPic.Location = new System.Drawing.Point(563, 140);
             this.txtPic.Name = "txtPic";
             this.txtPic.Size = new System.Drawing.Size(156, 148);

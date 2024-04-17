@@ -103,7 +103,7 @@ namespace MiColmado.Model
                     cbCategoria.SelectedIndex = -1;
                     txtCosto.Text = ""; 
                     txtPrecio.Text = "";
-                    txtPic.Image = MiColmado.Properties.Resources.productPic;
+                    txtPic.Image = MiColmado.Properties.Resources.comida_y_bebida__1_;
                     txtNombre.Focus();
                 }
 

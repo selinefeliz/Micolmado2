@@ -56,13 +56,13 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(1813, 81);
+            this.txtSearch.Location = new System.Drawing.Point(1769, 81);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Size = new System.Drawing.Size(227, 31);
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(2415, 68);
+            this.label2.Location = new System.Drawing.Point(2371, 68);
             // 
             // pictureBox1
             // 
@@ -116,14 +116,14 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowHeadersWidth = 35;
-            this.dataGridView1.Size = new System.Drawing.Size(692, 305);
+            this.dataGridView1.Size = new System.Drawing.Size(692, 279);
             this.dataGridView1.TabIndex = 6;
             // 
             // frmCustomerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 588);
+            this.ClientSize = new System.Drawing.Size(756, 562);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCustomerView";

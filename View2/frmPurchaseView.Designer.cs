@@ -47,13 +47,13 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(469, 94);
+            this.txtSearch.Location = new System.Drawing.Point(457, 94);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Size = new System.Drawing.Size(227, 31);
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(466, 68);
+            this.label2.Location = new System.Drawing.Point(454, 68);
             // 
             // pictureBox1
             // 
@@ -62,6 +62,7 @@
             // btnAdd
             // 
             this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_2);
             // 
             // dataGridView1
             // 

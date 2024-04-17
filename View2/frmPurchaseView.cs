@@ -231,5 +231,10 @@ namespace MiColmado.View2
                 }
             }
         }
+
+        private void btnAdd_Click_2(object sender, EventArgs e)
+        {
+
+        }
     }
 }
